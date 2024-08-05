@@ -1,0 +1,44 @@
+.story-section {
+    display: flex;
+    overflow-x: scroll;
+}
+
+.add-story {
+    flex: 0 0 auto;
+    margin-right: 10px;
+    /* Additional styling */
+}
+
+.story-card {
+    flex: 0 0 auto;
+    margin-right: 10px;
+    /* Additional styling */
+}
+
+.add-story form {
+    /* Style your form here */
+}
+
+.add-story textarea {
+    width: 100%;
+    /* Additional styling */
+}
+
+.add-story input[type="file"] {
+    margin-top: 10px;
+    /* Additional styling */
+}
+
+.add-story button {
+    margin-top: 10px;
+    /* Additional styling */
+}
+
+.story-card {
+    /* Style your story card here */
+}
+
+.story-card img {
+    width: 100%;
+    /* Additional styling */
+}
