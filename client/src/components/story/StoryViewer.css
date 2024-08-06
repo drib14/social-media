@@ -1,0 +1,105 @@
+.story-viewer-modal .modal-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.story-viewer-modal .modal-content {
+    border-radius: 0;
+    border: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.story-viewer-modal .modal-body {
+    flex: 1;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #000;
+}
+
+.story-viewer .story-header {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    z-index: 10;
+    /* Ensure it's above other content */
+}
+
+.story-viewer .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.story-viewer .user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.story-viewer .user-name {
+    font-weight: bold;
+}
+
+.story-viewer .story-time {
+    font-size: 12px;
+    color: #ddd;
+    /* Slightly lighter color for better readability */
+}
+
+.story-viewer .story-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.story-viewer .story-content img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    /* Ensure image maintains its aspect ratio */
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+    padding: 10px;
+    border-radius: 50%;
+    /* Make buttons round */
+}
+
+.nav-button.prev {
+    left: 10px;
+}
+
+.nav-button.next {
+    right: 10px;
+}
+
+.story-viewer-footer {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-top: none;
+    background: rgba(0, 0, 0, 0.5);
+}

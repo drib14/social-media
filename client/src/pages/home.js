@@ -6,6 +6,7 @@ import RightSideBar from '../components/home/RightSideBar'
 
 import { useSelector } from 'react-redux'
 import LoadIcon from '../images/loading.gif'
+import StoryFeature from '../components/story/StoryFeature'
 
 
 let scroll = 0;
@@ -29,6 +30,7 @@ const Home = () => {
     return (
         <div className="home row mx-0">
             <div className="col-md-8">
+                <StoryFeature/>
                 <Status />
 
                 {
