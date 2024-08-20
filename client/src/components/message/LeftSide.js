@@ -3,7 +3,7 @@ import UserCard from '../UserCard'
 import { useSelector, useDispatch } from 'react-redux'
 import { getDataAPI } from '../../utils/fetchData'
 import { GLOBALTYPES } from '../../redux/actions/globalTypes'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import { MESS_TYPES, getConversations } from '../../redux/actions/messageAction'
 
 
@@ -14,7 +14,7 @@ const LeftSide = () => {
     const [search, setSearch] = useState('')
     const [searchUsers, setSearchUsers] = useState([])
 
-    const navigate = useNavigate()
+    const history = useHistory()
     const { id } = useParams()
 
     const pageEnd = useRef()
@@ -40,7 +40,7 @@ const LeftSide = () => {
         setSearchUsers([])
         dispatch({type: MESS_TYPES.ADD_USER, payload: {...user, text: '', media: []}})
         dispatch({type: MESS_TYPES.CHECK_ONLINE_OFFLINE, payload: online})
-        return navigate(`/message/${user._id}`)
+        return history.push(`/message/${user._id}`)
     }
 
     const isActive = (user) => {

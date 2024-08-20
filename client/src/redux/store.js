@@ -1,20 +1,22 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import { Provider } from 'react-redux';
-import {thunk} from 'redux-thunk'
-import rootReducer from './reducers/index';
+import { createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+import thunk from 'redux-thunk'
 
-// Use the compose function from Redux to enhance store functionality
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+import rootReducer from './reducers/index'
+
+import { composeWithDevTools } from 'redux-devtools-extension'
 
 const store = createStore(
-  rootReducer,
-  composeEnhancers(applyMiddleware(thunk))
-);
+    rootReducer,
+    composeWithDevTools(applyMiddleware(thunk))
+)
 
-const DataProvider = ({ children }) => (
-  <Provider store={store}>
-    {children}
-  </Provider>
-);
+const DataProvider = ({children}) => {
+    return(
+        <Provider store={store}>
+            {children}
+        </Provider>
+    )
+}
 
-export default DataProvider;
+export default DataProvider

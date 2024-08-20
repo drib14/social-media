@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { login } from '../redux/actions/authAction'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -13,11 +13,11 @@ const Login = () => {
 
     const { auth } = useSelector(state => state)
     const dispatch = useDispatch()
-    const navigate = useNavigate()
+    const history = useHistory()
 
     useEffect(() => {
-        if(auth.token) navigate("/")
-    }, [auth.token, navigate])
+        if(auth.token) history.push("/")
+    }, [auth.token, history])
 
     const handleChangeInput = e => {
         const { name, value } = e.target
@@ -32,7 +32,7 @@ const Login = () => {
     return (
         <div className="auth_page">
             <form onSubmit={handleSubmit}>
-                <h3 className="text-uppercase text-center mb-4">V-Network</h3>
+                <h3 className="text-uppercase text-center mb-4">Socialize</h3>
 
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Email address</label>
